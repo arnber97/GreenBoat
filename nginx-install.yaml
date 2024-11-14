@@ -2,10 +2,17 @@
 - hosts: all
   become: true
   tasks:
-    - name: Install Nginx
+    - name: Install Nginx on Ubuntu
       apt:
         name: nginx
         state: present
+      when: ansible_distribution == 'Ubuntu'
+
+   - name: Install Nginx on RedHat
+      apt:
+        name: nginx
+        state: present
+      when: ansible_distribution == 'Redhat'
 
     - name: Create directory for static content
       file:
