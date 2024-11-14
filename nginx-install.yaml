@@ -12,7 +12,7 @@
       apt:
         name: nginx
         state: present
-      when: ansible_distribution == 'Redhat'
+      when: ansible_distribution == 'Redhat' or ansible_os_family == 'CentOS'
 
     - name: Create directory for static content
       file:
