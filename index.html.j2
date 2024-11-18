@@ -5,6 +5,11 @@
 </head>
 <body>
     <h1>Hello, </h1>
-    <p>Bienvenue au COPIL GreenBoat du 21/10/2024!</p>
+    <p>Bienvenue sur le serveur {{ ansible_facts['ansible_hostname'] }}!</p>
+    <p>Utilisation de <b>Playbook Ansible</b> pour déployer des solutions
+    <ul>
+    <li>Nom du serveur: {{ ansible_facts['ansible_hostname'] }}</li>
+    <li>Systeme d'exploitation: {{ ansible_facts['ansible_distribution'] }}, distribution: {{ ansible_facts['ansible_distribution_version'] }}</li>
+    </ul></p>
 </body>
 </html>
